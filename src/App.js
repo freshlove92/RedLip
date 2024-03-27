@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, useNavigate } from "react-router-dom"
+import ProductAll from './page/ProductAll';
+import Login from './page/Login'
+import DetailProduct from './page/DetailProduct';
+import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+
+//1. 전체상품 / 로그인 / 상세제품
+//1-1. 네비게이션바 만들기(상단메뉴) + 계속 유지
+//2. 전제상품페이지에서는 전체상품이 보인다
+//3. 로그인 버튼을 누르면 로그인페이지로 이동
+//3. 상품을 눌렀을때 로그인이 안되어 있으면 로그인페이지로 먼저 이동
+//4. 로그인이 되어있다면 상세페이지를 볼 수 있다
+//5. 로그아웃 버튼 누르면 로그아웃
+//5. 로그아웃 되면 상세페이지를 볼 수 없고 다시 로그인 페이지 안내
+//6. 로그인/로그아웃 글씨 변경된다
+//7. 상품을 검색 할 수 있다
 
 function App() {
+  
+  const [authenticate,setAuthenticate]=useState(false) //true는 로그인
+  const navigator = useNavigate()
+  
+  useEffect(()=>{
+    console.log("authenticate",authenticate)
+    navigator('/')  
+  },[authenticate])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+          <Route path='/' element={<ProductAll />} />
+          <Route path='/login' element={<Login setAuthenticate={setAuthenticate}/>} />
+          <Route path='/product/:id' element={<DetailProduct />} />
+      </Routes>
+    </>
   );
 }
 
