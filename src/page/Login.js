@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({setAuthenticate}) => {
-    
+    const navigate = useNavigate()
+
     const loginUser =(event)=>{
-            console.log("로그인 함수 이슈?", loginUser)
+            // console.log("로그인 함수 이슈?", loginUser)
             event.preventDefault();
             setAuthenticate(true);
+            navigate("/")
         }
 
     return (       

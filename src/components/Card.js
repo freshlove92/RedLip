@@ -1,12 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const Card = ({ item }) => {
-    console.log(item)
+    // console.log(item)
+    const navigator = useNavigate();
+
+    const showDetail =(event)=>{
+        
+        navigator(`/product/${item.id}`)
+        console.log("showDetail",showDetail)
+    }
+
+
     return (
 
-        <div className='cardItem'>
+        <div className='cardItem' onClick={showDetail}>
             <img width={300} src={item?.img} ></img>
+            
             <div className='textBox'>
 
                 <div className='smallTextBox'>
@@ -15,7 +26,7 @@ const Card = ({ item }) => {
                         {item?.choice && item?.new && <span> </span>} {/* 조건이 모두 참일 때만 공백을 추가 */}
                         {item?.new && <span className='card-new'>NEW!</span>}
 
-                        <span className='card-new'>{item?.new === false? "　" : ""}</span>
+                        <span className='card-new'>{!item?.new ? "　" : ""}</span>
                         {/* 줄 맞추고 싶어서 넣은 구문인데 다른방법은 없을까? */}
                     </div>
                 </div>

@@ -3,22 +3,29 @@ import Card from '../components/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { useSearchParams } from 'react-router-dom';
 
 const ProductAll = () => {
 
     const [ productList,setProductList ] = useState([]);
+    const [query,setQuery] = useSearchParams();
 
     const getProduct =async()=>{
-        let url = 'http://localhost:5000/products'
+        let searchQuery = query.get("q") || "";
+        let url = `https://my-json-server.typicode.com/freshlove92/RedLip/products?q=${searchQuery}`
+        console.log("쿼리값은?",searchQuery)
+
         let response = await fetch(url)
         let data = await response.json()
         // console.log(data)
         setProductList(data);
+       
+
     }
     
     useEffect(()=>{
         getProduct()
-    },[])
+    },[query])
 
     return (
         <div>

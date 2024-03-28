@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    
     
     const menubar = ['회원전용ZONE','EDITION','BEST', 'LIP','EYE', 'FACE','SET', 'ALL']
     const navigator = useNavigate()
     const gotoLogin =()=>{
         navigator('/login')
+    }
+
+    const search =(event)=>{
+        if (event.key === "Enter"){
+            let keyword = event.target.value
+            navigator (`/?q=${keyword}`)
+           
+        }
+    }
+    
+    const clickSearch =(event)=>{
+         let keyword = event.target.value
+            navigator (`/?q=${keyword}`)
+    }
+
+    const logo =()=>{
+        navigator('/')
     }
 
     return (
@@ -19,7 +37,7 @@ const Navbar = () => {
                 <Link to='/login' className='margin' >로그인</Link>
             </div>
 
-            <div className='logo'>
+            <div className='logo' onClick={logo}>
                 <img width={150} src='https://image.brandi.me/seller/mphankang_profile_1546504272.jpg' />
             </div>
 
@@ -28,7 +46,7 @@ const Navbar = () => {
                     {menubar.map((meun)=>(<li>{meun}</li>))}
                 </div>
                 <div className='searchbox'>
-                    <input className='input'></input>
+                    <input className='input' type='text' onKeyPress={(event) => search(event)} onClick={clickSearch} ></input>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />                    
                 </div>
             </div>
