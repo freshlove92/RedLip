@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 // import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { useSearchParams } from 'react-router-dom';
 
+
 const ProductAll = () => {
 
     const [ productList,setProductList ] = useState([]);
@@ -28,18 +29,19 @@ const ProductAll = () => {
     },[query])
 
     return (
-        <div>
+        <div className='item'>
             <Container>
                 <Row>
                     {productList.map((item)=>(
-                    <Col lg={3}><Card item={item}/></Col>
+                    <Col xs={6} lg={3}><Card item={item}/></Col>
                     ))}
                 </Row>   
             </Container>
             {/* <Card /> */}
-            <a href="#" className="page-top">↑</a>
+            {/* <a href="#" className="page-top">↑</a> */}
         </div>
     );
 };
 
 export default ProductAll;
+

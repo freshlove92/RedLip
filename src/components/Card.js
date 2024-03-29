@@ -16,7 +16,7 @@ const Card = ({ item }) => {
     return (
 
         <div className='cardItem' onClick={showDetail}>
-            <img width={300} src={item?.img} ></img>
+            <img className='cardImg' width={300} src={item?.img} ></img>
             
             <div className='textBox'>
 

@@ -26,6 +26,7 @@ const DetailProduct = () => {
                     <img width={400} src={product?.img}></img>
                 </Col>
                 <Col>
+                <div className='detailBox'>
                     <div className='detai-title' >{product?.title}</div>
                      <div>
                      <span className='card-sale'>{product?.sale}</span>
@@ -53,6 +54,7 @@ const DetailProduct = () => {
                         <button className='bagu'>바로구매하기</button>
                         </div>
                         </div>
+                    </div>
                 </Col>
                 </Row>           
         </Container>
