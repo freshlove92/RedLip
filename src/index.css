@@ -341,7 +341,9 @@ code {
       align-items: center;
     }
     .Row{
-     
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 10px;
     }
     .Col{
