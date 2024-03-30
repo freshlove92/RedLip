@@ -315,7 +315,7 @@ code {
       width: 100px;
       margin: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .detailBox{
       width: 100%;
