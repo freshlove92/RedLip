@@ -157,9 +157,12 @@ code {
   font-weight: lighter;
   
 }
+
 .detailimg{
   display: flex;
   justify-content: flex-end;
+  width: 300px;
+  height: 500px;
 }
 .detai-title{
   font-weight: bold;
@@ -170,7 +173,8 @@ code {
   margin-bottom: 40px;
   padding-top: 20px;
 }
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
 
 .dropdown{
   position : relative;
@@ -188,10 +192,11 @@ code {
   color : rgb(37, 37, 37);
   padding : 12px;
   width :300px;
-  text-align: left;
+  text-align: center;
   cursor : pointer;
   font-size : 12px;
 }
+
 .dropdown-content{
   display : none;
   position : absolute;
@@ -206,11 +211,11 @@ code {
   text-decoration : none;
   color : rgb(37, 37, 37);
   font-size: 12px;
-  padding : 12px 20px;
+  padding : 12px 20px;  
 }
 
 .dropdown-content a:hover{
-  background-color : #ececec
+  background-color : #a8a8a8
 }
 
 .dropdown:hover .dropdown-content {
@@ -221,7 +226,7 @@ code {
   color: #fff;
   width :300px;
   height: 50px;
-  margin-top: 230px;
+  margin-top: 20px;
   
 }
 .bagu:hover{
@@ -264,7 +269,7 @@ code {
  
     }
     .cardImg{
-     width: 190px;
+     width: 160px;
       
     }
     
@@ -306,19 +311,44 @@ code {
     .loginBtn {
       width: 100%;
     }
+    .detailimg{
+      width: 100px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
     .detailBox{
       width: 100%;
       margin-left: 10px;
       margin-top: 10px;
     }
-    .justText{
-     margin: 10px;
+    .dropbtn{
+      width: 300%;
     }
     .bagu{
-      margin-top: 10px;
+      margin-top: 20px;
       margin-bottom: 100px;
-      width: 130%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300%;
     }
-    
+    .Container{
+      /* border: 1px solid #000; */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .Row{
+     
+      padding: 10px;
+    }
+    .Col{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     /* 기타 모바일 화면을 위한 스타일링 */
 }
