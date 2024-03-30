@@ -48,7 +48,8 @@ const DetailProduct = () => {
                      <div>브랜드　　릴리바이레드 </div>
                      <div>배송비　　2,500원(15,000원 이상 구매 시 무료) </div>
                      </div>
-
+                    
+                    <div className='btnBox'>
                      <div class="dropdown">
                         <button class="dropbtn" onClick={toggleDropdown}>옵션선택 ▼</button>
                         {isOpen && (
@@ -62,6 +63,7 @@ const DetailProduct = () => {
                         <button className='bagu'>바로구매하기</button>
                         </div>
                         </div>
+                    </div>    
                     </div>
                 </Col>
             </Row>           
