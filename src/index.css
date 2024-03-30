@@ -334,11 +334,14 @@ code {
       align-items: center;
       width: 300%;
     }
-      
+    
+    .Container{
+      width: 100%;
+    }
     .btnBox{
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       }
     /* 기타 모바일 화면을 위한 스타일링 */
